@@ -11,6 +11,9 @@ ChocoLabProject/[Ll]ogs/
 ChocoLabProject/[Uu]ser[Ss]ettings/
 # .gitignore 파일에 추가
 .DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
