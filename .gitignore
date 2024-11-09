@@ -10,6 +10,7 @@ ChocoLabProject/[Bb]uilds/
 ChocoLabProject/[Ll]ogs/
 ChocoLabProject/[Uu]ser[Ss]ettings/
 
+./.DS_Store
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 ChocoLabProject/[Mm]emoryCaptures/
