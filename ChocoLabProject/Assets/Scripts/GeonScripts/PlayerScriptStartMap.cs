@@ -127,15 +127,15 @@ public class PlayerScriptStartMap : MonoBehaviour
         }
     }
 
-    void OnCollisionStay(Collision collision)
-    {
-        isGrounded = true;
-        Debug.Log("Grounded");
-    }
+    // void OnCollisionStay(Collision collision)
+    // {
+    //     isGrounded = true;
+    //     Debug.Log("Grounded");
+    // }
 
-    void OnCollisionExit(Collision collision)
-    {
-        isGrounded = false;
-        Debug.Log("Not Grounded");
-    }
+    // void OnCollisionExit(Collision collision)
+    // {
+    //     isGrounded = false;
+    //     Debug.Log("Not Grounded");
+    // }
 }

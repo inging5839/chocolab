@@ -1,0 +1,28 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="BoilUI" style="flex-grow: 1; flex-direction: row; align-self: center; justify-content: space-between;">
+        <ui:VisualElement name="Dark" style="flex-grow: 1; align-self: auto; align-items: center;">
+            <ui:Label tabindex="-1" text="Dark" parse-escape-sequences="true" display-tooltip-when-elided="true" name="FlavorLabel" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AmountLabel" />
+            <ui:Button text="Boiling" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BoilButton" />
+            <ui:ProgressBar value="5" title="my-progress" name="BoilProgress" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Milk" style="flex-grow: 1; align-self: auto; align-items: center;">
+            <ui:Label tabindex="-1" text="Milk" parse-escape-sequences="true" display-tooltip-when-elided="true" name="FlavorLabel" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AmountLabel" />
+            <ui:Button text="Boiling" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BoilButton" />
+            <ui:ProgressBar value="5" title="my-progress" name="BoilProgress" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Strawberry" style="flex-grow: 1; align-self: auto; align-items: center;">
+            <ui:Label tabindex="-1" text="Strawberry" parse-escape-sequences="true" display-tooltip-when-elided="true" name="FlavorLabel" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AmountLabel" />
+            <ui:Button text="Boiling" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BoilButton" />
+            <ui:ProgressBar value="5" title="my-progress" name="BoilProgress" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Matcha" style="flex-grow: 1; align-self: auto; align-items: center;">
+            <ui:Label tabindex="-1" text="Matcha" parse-escape-sequences="true" display-tooltip-when-elided="true" name="FlavorLabel" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AmountLabel" />
+            <ui:Button text="Boiling" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BoilButton" />
+            <ui:ProgressBar value="5" title="my-progress" name="BoilProgress" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

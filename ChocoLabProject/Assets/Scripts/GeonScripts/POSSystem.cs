@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using System.Collections.Generic;
+using System.Linq;
 
 public class POSSystem : MonoBehaviour
 {
     [SerializeField] private UIDocument uiDocument;
+    [SerializeField] private Taste tasteSystem;
     private bool isUIActive = false;
     private VisualElement posScreen;
+    private ListView chocolateListView;
 
     void Start()
     {
@@ -21,6 +25,7 @@ public class POSSystem : MonoBehaviour
         {
             posScreen.style.display = DisplayStyle.None;
             isUIActive = false;
+            
         }
     }
 
