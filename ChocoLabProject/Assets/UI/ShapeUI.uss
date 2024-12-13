@@ -1,0 +1,44 @@
+.chocolate-container {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.chocolate-item {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+}
+
+.chocolate-item:hover {
+    scale: 1.1;
+}
+
+.dark { background-color: rgb(40, 20, 0); }
+.milk { background-color: rgb(139, 69, 19); }
+.strawberry { background-color: rgb(255, 182, 193); }
+.matcha { background-color: rgb(106, 153, 78); }
+
+.mold-container {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.mold-slot {
+    width: 50px;
+    height: 50px;
+    border: 2px dashed rgb(128, 128, 128);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.mold-slot.highlight {
+    border-color: yellow;
+}
+
+.filled-mold {
+    background-color: rgb(70, 35, 20);
+}

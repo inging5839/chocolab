@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/ShapeUI.uss?fileID=7433441132597879392&amp;guid=1d1a2d2cd44a04b798933b7398538f9b&amp;type=3#ShapeUI" />
+    <ui:VisualElement name="ShapeUI">
+        <ui:VisualElement name="MeltedChocolateArea" class="chocolate-container">
+            <ui:VisualElement name="DarkChocolate" class="chocolate-item dark" />
+            <ui:VisualElement name="MilkChocolate" class="chocolate-item milk" />
+            <ui:VisualElement name="StrawberryChocolate" class="chocolate-item strawberry" />
+            <ui:VisualElement name="MatchaChocolate" class="chocolate-item matcha" />
+        </ui:VisualElement>
+        <ui:VisualElement name="ChocolateMoldArea" class="mold-container" style="flex-direction: row;">
+            <ui:VisualElement name="ChocolateMold" class="mold-slot" style="flex-direction: row-reverse; width: 50px; height: 50px;" />
+            <ui:VisualElement name="ChocolateMold" class="mold-slot" style="flex-direction: row; width: 50px; height: 50px;" />
+            <ui:VisualElement name="ChocolateMold" class="mold-slot" style="width: 50px; height: 50px;" />
+            <ui:VisualElement name="ChocolateMold" class="mold-slot" style="width: 50px; height: 50px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

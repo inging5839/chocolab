@@ -6,16 +6,22 @@ using Cursor = UnityEngine.Cursor;
 
 public class Taste : MonoBehaviour
 {
+    [SerializeField] private PlayerScriptStartMap playerScript;
     [SerializeField] private UIDocument uiDocument;
     private VisualElement rootElement;
     private VisualElement tasteUI;
     private bool isUIActive = false;
 
-    public int index = 0; 
     public class ChocolateData
     {
-        public string Flavor { get; set; }
-        public int Amount { get; set; }
+        public string Flavor { 
+            get; 
+            set;
+        }
+        public int Amount { 
+            get; 
+            set;
+        }
         public bool CanAddMore => Amount < 5;
     }
 
@@ -53,16 +59,12 @@ public class Taste : MonoBehaviour
         rootElement = uiDocument.rootVisualElement;
         tasteUI = rootElement.Q<VisualElement>("TasteUI");
             
-        if (tasteUI != null)
-        {
-            tasteUI.style.display = DisplayStyle.None;
-            
-            // 각 초콜릿 종류별로 UI 설정
-            SetupChocolateUI("Dark", 0);
-            SetupChocolateUI("Milk", 1);
-            SetupChocolateUI("Strawberry", 2);
-            SetupChocolateUI("Matcha", 3);
-        }
+        tasteUI.style.display = DisplayStyle.None;
+        // 각 초콜릿 종류별로 UI 설정
+        SetupChocolateUI("Dark", 0);
+        SetupChocolateUI("Milk", 1);
+        SetupChocolateUI("Strawberry", 2);
+        SetupChocolateUI("Matcha", 3);
     }
 
     private void SetupChocolateUI(string chocolateType, int index)
@@ -106,16 +108,14 @@ public class Taste : MonoBehaviour
             };
 
             var chocolateElement = tasteUI.Q<VisualElement>(chocolateType);
-            if (chocolateElement != null)
-            {
-                var amountLabel = chocolateElement.Q<Label>("AmountLabel");
-                var addButton = chocolateElement.Q<Button>("AddButton");
-                var removeButton = chocolateElement.Q<Button>("RemoveButton");
-                    
-                amountLabel.text = $"수량: {chocolates[i].Amount}/5";
-                addButton.SetEnabled(chocolates[i].CanAddMore);
-                removeButton.SetEnabled(chocolates[i].Amount > 0);
-            }
+            
+            var amountLabel = chocolateElement.Q<Label>("AmountLabel");
+            var addButton = chocolateElement.Q<Button>("AddButton");
+            var removeButton = chocolateElement.Q<Button>("RemoveButton");
+                
+            amountLabel.text = $"수량: {chocolates[i].Amount}/5";
+            addButton.SetEnabled(chocolates[i].CanAddMore);
+            removeButton.SetEnabled(chocolates[i].Amount > 0);
         }
     }
 
@@ -155,41 +155,41 @@ public class Taste : MonoBehaviour
             }
         }
     }
+    private void OpenToggleUI() {  
+        isUIActive = true;
+        tasteUI.style.display = DisplayStyle.Flex;
+        RefreshUI();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        playerScript.SetControlState(false);
+    }
+
+    private void CloseToggleUI() {
+        isUIActive = false;
+        tasteUI.style.display = DisplayStyle.None;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        playerScript.SetControlState(true);
+    }
+
 
     public List<ChocolateData> GetChocolates()
     {
         return chocolates;
     }
 
-    void OnMouseDown()
-    {
-        ToggleUI();
-    }
-
-    private void ToggleUI()
-    {
-        if (tasteUI == null) return;
-
-        isUIActive = !isUIActive;
-        tasteUI.style.display = isUIActive ? DisplayStyle.Flex : DisplayStyle.None;
-
-        if (isUIActive)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+    void OnMouseDown() {
+        if (!isUIActive) {
+        OpenToggleUI();
         }
     }
 
+    
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && isUIActive)
+    { 
+        if (Input.GetKeyDown(KeyCode.Q) && isUIActive)
         {
-            ToggleUI();
+            CloseToggleUI();
         }
     }
 }

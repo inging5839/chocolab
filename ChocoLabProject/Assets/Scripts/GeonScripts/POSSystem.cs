@@ -13,55 +13,45 @@ public class POSSystem : MonoBehaviour
 
     void Start()
     {
-        if (uiDocument == null)
-        {
-            Debug.LogError("UIDocument가 할당되지 않았습니다.");
-            return;
-        }
-
         posScreen = uiDocument.rootVisualElement.Q<VisualElement>("PosUI");
-        
-        if (posScreen != null)
-        {
-            posScreen.style.display = DisplayStyle.None;
-            isUIActive = false;
+            // UI 요소를 화면에서 완전히 숨김
+        posScreen.style.display = DisplayStyle.None;
+        // UI 활성 여부 false로 설정
+        isUIActive = false;
             
+        
+    }
+
+    public void TogglePOSUI()
+    {        
+        isUIActive = !isUIActive;
+        posScreen.style.display = isUIActive ? DisplayStyle.Flex : DisplayStyle.None;
+        
+
+
+        if (isUIActive) {
+        // 마우스 커서 잠금 해제
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        // 마우스 커서 표시
+        UnityEngine.Cursor.visible = true;
+        } else {
+            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+            UnityEngine.Cursor.visible = false;
         }
     }
 
-    public void OpenPOSUI()
-    {
-        if (posScreen == null) return;
-        
-        if (isUIActive) return;
+    
 
-        isUIActive = true;
-        posScreen.style.display = DisplayStyle.Flex;
-        
-        UnityEngine.Cursor.lockState = CursorLockMode.None;
-        UnityEngine.Cursor.visible = true;
-    }
-
-    public void ClosePOSUI()
-    {
-        if (posScreen == null) return;
-
-        if (!isUIActive) return;
-
-        isUIActive = false;
-        posScreen.style.display = DisplayStyle.None;
-        
-        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-        UnityEngine.Cursor.visible = false;
-    }
-
-    public bool IsUIOpen()
-    {
-        return isUIActive;
-    }
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape) && isUIActive)
+        {
+            TogglePOSUI();
+        }
+    }
+
+    void OnMouseDown() {
+        TogglePOSUI();
     }
 }

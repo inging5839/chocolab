@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerScriptStartMap : MonoBehaviour
 {
 
-    public Image crosshair;
+    private POSSystem posSystem;
     public float moveSpeed = 5f;
     public float sprintSpeed = 8f;
     public float jumpForce = 5f;
@@ -21,33 +21,38 @@ public class PlayerScriptStartMap : MonoBehaviour
     private Rigidbody rb;
     public Camera playerCamera;
 
-    public float pickupRange = 3f;        // 물체를 집을 수 있는 거리
-    public Transform holdPosition;         // 물체를 들고있을 위치
-    private GameObject heldObject;         // 현재 들고있는 물체
-    private Rigidbody heldObjectRb;       // 들고있는 물체의 Rigidbody
+    private bool canControl = true; // 컨트롤 가능 여부
 
+    public void SetControlState(bool state)
+    {
+        canControl = state;
+    }
+
+
+    
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
 
-        Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        rotationX += Input.GetAxis("Mouse X") * sensitivityX;
-        rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-        rotationY = Mathf.Clamp(rotationY, minY, maxY);
-        transform.rotation = Quaternion.Euler(0, rotationX, 0);
+        
 
-        if (playerCamera != null)
-        {
-            playerCamera.transform.localRotation = Quaternion.Euler(-rotationY, 0, 0);
+
+        if (canControl) {
+            CameraRotation();
         }
+        
 
-        float moveX = Input.GetAxis("Horizontal"); 
-        float moveZ = Input.GetAxis("Vertical");
+        // 움직임 입력 받기
+        float moveX = Input.GetAxisRaw("Horizontal"); // 즉시 -1, 0, 1 값으로 변화
+        float moveZ = Input.GetAxisRaw("Vertical"); 
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
         
         float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : moveSpeed;
@@ -59,83 +64,32 @@ public class PlayerScriptStartMap : MonoBehaviour
             if (isGrounded)
             {
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                Debug.Log("Jump!");
-            }
-        }
-
-        // 물체 집기/놓기
-        if (Input.GetMouseButtonDown(0))  // 마우스 좌클릭
-        {
-            if (heldObject == null)
-            {
-                // 물체 집기 - 화면 중앙에서 레이캐스트 발사
-                RaycastHit pickupHit;
-                Ray pickupRay = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-                
-                if (Physics.Raycast(pickupRay, out pickupHit, pickupRange))
-                {
-                    // Rigidbody가 있는 물체만 집을 수 있음
-                    Rigidbody rb = pickupHit.collider.GetComponent<Rigidbody>();
-                    if (rb != null)
-                    {
-                        heldObject = pickupHit.collider.gameObject;
-                        heldObjectRb = rb;
-                        heldObjectRb.useGravity = false;
-                        heldObjectRb.isKinematic = true;
-                        heldObject.transform.parent = holdPosition;
-                        heldObject.transform.position = holdPosition.position;
-                    }
-                }
-            }
-            else
-            {
-                // 물체 놓기
-                heldObject.transform.parent = null;
-                heldObjectRb.useGravity = true;
-                heldObjectRb.isKinematic = false;
-                heldObject = null;
-                heldObjectRb = null;
-            }
-        }
-
-        // 크로스헤어 레이캐스트 체크
-        Ray posRay = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        RaycastHit posHit;
-        
-        if (Physics.Raycast(posRay, out posHit, pickupRange))
-        {
-            // POS 시스템 체크
-            POSSystem posSystem = posHit.collider.GetComponent<POSSystem>();
-            if (posSystem != null)
-            {
-                // 크로스헤어가 POS에 닿았을 때
-                if (Input.GetMouseButtonDown(0))  // 마우스 좌클릭
-                {
-                    posSystem.OpenPOSUI();
-                }
-            }
-        }
-
-        // ESC 키로 POS UI 닫기 (선택사항)
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            POSSystem[] posSystems = FindObjectsOfType<POSSystem>();
-            foreach (POSSystem pos in posSystems)
-            {
-                pos.ClosePOSUI();
             }
         }
     }
 
-    // void OnCollisionStay(Collision collision)
-    // {
-    //     isGrounded = true;
-    //     Debug.Log("Grounded");
-    // }
+    void CameraRotation() {
+        // 마우스 좌우 움직임에 따라 카메라 회전
+        rotationX += Input.GetAxis("Mouse X") * sensitivityX;
+        // 마우스 위아래 움직임에 따라 카메라 회전
+        rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+        // 카메라 회전 각도 제한
+        rotationY = Mathf.Clamp(rotationY, minY, maxY);
+        // 좌우 카메라 회전
+        transform.rotation = Quaternion.Euler(0, rotationX, 0);    
+        // 위아래 카메라 회전
+        playerCamera.transform.localRotation = Quaternion.Euler(-rotationY, 0, 0);
+        // UI가 켜져있으면 불가능하면 카메라 화면회전 메서드 실행하지 않음
+           
+    } 
 
-    // void OnCollisionExit(Collision collision)
-    // {
-    //     isGrounded = false;
-    //     Debug.Log("Not Grounded");
-    // }
+    void OnCollisionStay(Collision collision)
+    {
+        isGrounded = true;
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        isGrounded = false;
+    }
 }
