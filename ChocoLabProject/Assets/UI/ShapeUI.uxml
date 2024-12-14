@@ -8,10 +8,18 @@
             <ui:VisualElement name="MatchaChocolate" class="chocolate-item matcha" />
         </ui:VisualElement>
         <ui:VisualElement name="ChocolateMoldArea" class="mold-container" style="flex-direction: row;">
-            <ui:VisualElement name="ChocolateMold" class="mold-slot" style="flex-direction: row-reverse; width: 50px; height: 50px;" />
-            <ui:VisualElement name="ChocolateMold" class="mold-slot" style="flex-direction: row; width: 50px; height: 50px;" />
-            <ui:VisualElement name="ChocolateMold" class="mold-slot" style="width: 50px; height: 50px;" />
-            <ui:VisualElement name="ChocolateMold" class="mold-slot" style="width: 50px; height: 50px;" />
+            <ui:VisualElement name="Kisses" class="mold-slot" style="flex-direction: row-reverse; width: 50px; height: 50px; align-items: stretch; justify-content: space-around; background-color: rgba(56, 56, 56, 0.9);">
+                <ui:Label tabindex="-1" text="Kisses" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="align-items: center; -unity-text-align: upper-center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Pepero" class="mold-slot" style="flex-direction: row; width: 50px; height: 50px; align-self: auto; background-color: rgba(56, 184, 56, 0.68);">
+                <ui:Label tabindex="-1" text="Pepero" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-items: center; -unity-text-align: upper-center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Heart" class="mold-slot" style="width: 50px; height: 50px; align-items: center; background-color: rgba(212, 140, 37, 0.67);">
+                <ui:Label tabindex="-1" text="Heart" parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="true" style="align-items: center; width: 45px; -unity-text-align: upper-center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Regular" class="mold-slot" style="width: 50px; height: 50px; align-items: center; background-color: rgba(56, 56, 213, 0.65);">
+                <ui:Label tabindex="-1" text="Regular" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-items: center; width: 54px; -unity-text-align: upper-center;" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
