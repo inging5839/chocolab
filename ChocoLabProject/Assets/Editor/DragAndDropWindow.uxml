@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/DragAndDropWindow.uss?fileID=7433441132597879392&amp;guid=689b83209a0a74ccc94becc7b3629a1a&amp;type=3#DragAndDropWindow" />
+    <ui:VisualElement name="slots" style="align-self: center;">
+        <ui:VisualElement name="slot_row1" class="slot_row" style="-unity-text-align: upper-left; justify-content: space-around; width: 507px; align-self: center; height: 114px;">
+            <ui:VisualElement name="slot1" class="slot">
+                <ui:Label tabindex="-1" text="Kisses" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="-unity-text-align: middle-center; align-self: auto; justify-content: flex-start; align-items: auto; height: 71px; -unity-font-style: bold; font-size: 17px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="slot2" class="slot">
+                <ui:Label tabindex="-1" text="Pepero" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="-unity-text-align: middle-center; align-self: auto; justify-content: flex-start; align-items: auto; height: 71px; -unity-font-style: bold; font-size: 17px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="slot3" class="slot">
+                <ui:Label tabindex="-1" text="Heart" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="-unity-text-align: middle-center; align-self: auto; justify-content: flex-start; align-items: auto; height: 71px; -unity-font-style: bold; font-size: 17px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="slot4" class="slot">
+                <ui:Label tabindex="-1" text="Regular" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="-unity-text-align: middle-center; align-self: auto; justify-content: flex-start; align-items: auto; height: 71px; -unity-font-style: bold; font-size: 17px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Matcha" tabindex="500" class="object" style="align-self: center; top: 149px; left: 598px; right: 212px; background-color: rgb(166, 178, 124);" />
+    <ui:VisualElement name="Strawberry" tabindex="500" class="object" style="align-self: center; top: 146px; left: 469px; right: 341px; background-color: rgb(214, 112, 109);" />
+    <ui:VisualElement name="Milk" tabindex="500" class="object" style="align-self: center; top: 155px; left: 340px; right: 469px; background-color: rgb(239, 231, 195);" />
+    <ui:VisualElement name="Dark" tabindex="500" class="object" style="align-self: center; top: 153px; left: 215px; right: 595px; background-color: rgb(71, 59, 47);" />
+</ui:UXML>

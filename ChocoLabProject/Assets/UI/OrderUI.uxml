@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="MoneyUI" style="flex-grow: 1; height: 131px; width: 440px; position: absolute; top: 42px; left: 1432px;">
+        <ui:VisualElement style="flex-grow: 1; align-self: auto; justify-content: center; flex-direction: row; position: relative;">
+            <ui:Label tabindex="-1" text="My Money : " parse-escape-sequences="true" display-tooltip-when-elided="true" name="MoneyText" style="font-size: 36px; align-self: center; align-items: auto; justify-content: space-around;" />
+            <ui:Label tabindex="-1" text="3000₩" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Money" style="font-size: 36px; align-self: center; align-items: auto; justify-content: space-around;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="OrderUI" style="flex-grow: 1; position: absolute; height: 180px; width: 1375px; flex-direction: row; opacity: 1; display: flex; padding-left: 10px; padding-right: 50px; top: -2px; left: 0;">
+        <ui:VisualElement name="OrderDisplay0" style="flex-grow: 1; width: 400px; height: 130px; position: relative; left: 20px; top: 30px; background-color: rgba(36, 31, 31, 0.35); border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; margin-right: 5px; margin-left: 5px;">
+            <ui:Label tabindex="-1" text="Matcha" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Flavor" style="font-size: 40px; -unity-text-align: upper-center;" />
+            <ui:Label tabindex="-1" text="Heart" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Shape" style="font-size: 40px; -unity-text-align: upper-center;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="OrderDisplay1" style="flex-grow: 1; width: 400px; height: 130px; position: relative; left: 20px; top: 30px; background-color: rgba(36, 31, 31, 0.35); border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; margin-right: 5px; margin-left: 5px;">
+            <ui:Label tabindex="-1" text="Matcha" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Flavor" style="font-size: 40px; -unity-text-align: upper-center;" />
+            <ui:Label tabindex="-1" text="Heart" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Shape" style="font-size: 40px; -unity-text-align: upper-center;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="OrderDisplay2" style="flex-grow: 1; width: 400px; height: 130px; position: relative; left: 20px; top: 30px; background-color: rgba(36, 31, 31, 0.35); border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; margin-right: 5px; margin-left: 5px;">
+            <ui:Label tabindex="-1" text="Matcha" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Flavor" style="font-size: 40px; -unity-text-align: upper-center;" />
+            <ui:Label tabindex="-1" text="Heart" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Shape" style="font-size: 40px; -unity-text-align: upper-center;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="OrderDisplay3" style="flex-grow: 1; width: 400px; height: 130px; position: relative; left: 20px; top: 30px; background-color: rgba(36, 31, 31, 0.35); border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; margin-right: 5px; margin-left: 5px;">
+            <ui:Label tabindex="-1" text="Matcha" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Flavor" style="font-size: 40px; -unity-text-align: upper-center;" />
+            <ui:Label tabindex="-1" text="Heart" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Shape" style="font-size: 40px; -unity-text-align: upper-center;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
