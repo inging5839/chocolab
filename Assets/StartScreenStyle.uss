@@ -1,6 +1,0 @@
-VisualElement {
-}
-
-.StartScreenStyle {
-    flex-grow: 1;
-}
