@@ -1,28 +1,28 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="TasteUI" style="flex-grow: 1; flex-direction: row;">
+    <ui:VisualElement name="TasteUI" style="flex-grow: 1; flex-direction: row; position: absolute; top: 275px; width: 907px;">
         <ui:VisualElement name="Dark" style="flex-grow: 1; align-self: center; width: 265px; height: 50px; flex-direction: column-reverse; justify-content: center; align-items: stretch;">
-            <ui:Button text="추가" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AddButton" style="align-self: center; justify-content: flex-start; align-items: auto; left: auto; top: auto; height: 24px;" />
-            <ui:Button text="버리기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RemoveButton" style="top: auto; align-self: center; height: 24px; width: auto; right: auto;" />
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="FlavorLabel" style="align-self: center;" />
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AmountLabel" style="align-self: center;" />
+            <ui:Button text="버리기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RemoveButton" style="font-size: 20px; width: auto; align-self: center; height: 24px;" />
+            <ui:Button text="추가" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AddButton" style="align-self: center; justify-content: flex-start; align-items: auto; left: auto; top: auto; height: 24px; font-size: 20px;" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="FlavorLabel" style="align-self: center; font-size: 30px;" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AmountLabel" style="align-self: center; font-size: 30px;" />
         </ui:VisualElement>
         <ui:VisualElement name="Milk" style="flex-grow: 1; align-self: center; width: 265px; height: 50px; flex-direction: column-reverse; justify-content: center; align-items: stretch;">
-            <ui:Button text="추가" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AddButton" style="align-self: center; justify-content: flex-start; align-items: auto; left: auto; top: auto; height: 24px;" />
-            <ui:Button text="버리기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RemoveButton" style="top: auto; align-self: center; height: 24px; width: auto; right: auto;" />
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="FlavorLabel" style="align-self: center;" />
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AmountLabel" style="align-self: center;" />
+            <ui:Button text="버리기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RemoveButton" style="top: auto; align-self: center; height: 24px; width: auto; right: auto; font-size: 20px;" />
+            <ui:Button text="추가" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AddButton" style="align-self: center; justify-content: flex-start; align-items: auto; left: auto; top: auto; height: 24px; font-size: 20px;" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="FlavorLabel" style="align-self: center; font-size: 30px;" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AmountLabel" style="align-self: center; font-size: 30px;" />
         </ui:VisualElement>
         <ui:VisualElement name="Strawberry" style="flex-grow: 1; align-self: center; width: 265px; height: 50px; flex-direction: column-reverse; justify-content: center; align-items: stretch;">
-            <ui:Button text="추가" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AddButton" style="align-self: center; justify-content: flex-start; align-items: auto; left: auto; top: auto; height: 24px;" />
-            <ui:Button text="버리기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RemoveButton" style="top: auto; align-self: center; height: 24px; width: auto; right: auto;" />
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="FlavorLabel" style="align-self: center;" />
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AmountLabel" style="align-self: center;" />
+            <ui:Button text="버리기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RemoveButton" style="top: auto; align-self: center; height: 24px; width: auto; right: auto; font-size: 20px;" />
+            <ui:Button text="추가" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AddButton" style="align-self: center; justify-content: flex-start; align-items: auto; left: auto; top: auto; height: 24px; font-size: 20px;" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="FlavorLabel" style="align-self: center; font-size: 30px;" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AmountLabel" style="align-self: center; font-size: 30px;" />
         </ui:VisualElement>
         <ui:VisualElement name="Matcha" style="flex-grow: 1; align-self: center; width: 265px; height: 127px; flex-direction: column-reverse; justify-content: center; align-items: stretch;">
-            <ui:Button text="추가" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AddButton" style="align-self: center; justify-content: flex-start; align-items: auto; left: auto; top: auto; height: 24px;" />
-            <ui:Button text="버리기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RemoveButton" style="top: auto; align-self: center; height: 24px; width: auto; right: auto;" />
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="FlavorLabel" style="align-self: center;" />
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AmountLabel" style="align-self: center;" />
+            <ui:Button text="버리기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RemoveButton" style="top: auto; align-self: center; height: 24px; width: auto; right: auto; font-size: 20px;" />
+            <ui:Button text="추가" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AddButton" style="align-self: center; justify-content: flex-start; align-items: auto; left: auto; top: auto; height: 24px; font-size: 20px;" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="FlavorLabel" style="align-self: center; font-size: 30px;" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AmountLabel" style="align-self: center; font-size: 30px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -16,12 +16,21 @@ public class Order : MonoBehaviour
     Random random = new Random();
     
 
+    void Awake()
+        {
+            // UIDocument 컴포넌트 가져오기
+            if (uiDocument == null)
+            {
+                uiDocument = GetComponent<UIDocument>();
+            }
+        }
+
 
     // Start is called before the first frame update
     void Start()
     {
         rootElement = uiDocument.rootVisualElement;
-        var orderUI = rootElement.Q<VisualElement>("OrderUI");
+        orderUI = rootElement.Q<VisualElement>("OrderUI");
         orderUI.visible = false;
         var orderDisplay0 = orderUI.Q<VisualElement>("OrderDisplay0");
         var orderDisplay1 = orderUI.Q<VisualElement>("OrderDisplay1");
@@ -39,9 +48,11 @@ public class Order : MonoBehaviour
             shapeText.text = ShapeList[random.Next(ShapeList.Count)];
             newOrder[0] = flavorText.text;
             newOrder[1] = shapeText.text;
+            Debug.Log(newOrder[0] + " " + newOrder[1]);
             orderList.Add(newOrder);
-        }
 
+        }
+        
         orderUI.visible = true;
 
 
